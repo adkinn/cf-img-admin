@@ -111,6 +111,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Acknowledgments
 
+- Co-developer [Cursor AI](https://cursor.com)
 - Built with [React Router](https://reactrouter.com)
 - Uses [Cloudflare Images API](https://developers.cloudflare.com/images/)
 - Styled with [Tailwind CSS](https://tailwindcss.com/)
