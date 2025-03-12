@@ -2,6 +2,8 @@
 
 A modern web application for managing your Cloudflare Images. Built with React, React Router, and TypeScript.
 
+![screenshot of the cf-img-admin](https://imagedelivery.net/YuQ2fAVKRjZQ4TYu1_j8PQ/0271b93f-e8d6-40c2-cfad-33cbfb1eb300/public)
+
 The current Cloudflare Images interface does not provide an easy way to see the images you have uploaded. So I've created this simple application as a way to enhance the browsing experience.
 
 This is a simple application intended for use locally or internally not in production. 
