@@ -1,87 +1,114 @@
-# Welcome to React Router!
+# Cloudflare Images Admin
 
-A modern, production-ready template for building full-stack React applications using React Router.
+A modern web application for managing your Cloudflare Images. Built with React, React Router, and TypeScript.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/remix-run/react-router-templates/tree/main/default)
+The current Cloudflare Images interface does not provide an easy way to see the images you have uploaded. So I've created this simple application as a way to enhance the browsing experience.
+
+This is a simple application intended for use locally or internally not in production. 
 
 ## Features
 
-- 🚀 Server-side rendering
-- ⚡️ Hot Module Replacement (HMR)
-- 📦 Asset bundling and optimization
-- 🔄 Data loading and mutations
-- 🔒 TypeScript by default
-- 🎉 TailwindCSS for styling
-- 📖 [React Router docs](https://reactrouter.com/)
+- 📸 View and manage your Cloudflare Images
+- 🔄 Upload new images
+- 🗑️ Delete images with confirmation
+- 🔍 View detailed image information including variants
+- 🎨 Modern, responsive UI with Tailwind CSS
+- 🔒 Secure handling of Cloudflare credentials
 
-## Getting Started
+## Installation
 
-### Installation
+1. Clone the repository:
+```bash
+git clone https://github.com/adkinn/cf-img-admin.git
+cd cf-img-admin
+```
 
-Install the dependencies:
-
+2. Install dependencies:
 ```bash
 npm install
 ```
 
-### Development
+3. Create a `.env` file with your Cloudflare credentials:
+```env
+CLOUDFLARE_API_TOKEN=your_api_token
+CLOUDFLARE_ACCOUNT_ID=your_account_id
+CLOUDFLARE_ACCOUNT_HASH=your_account_hash
+```
 
-Start the development server with HMR:
-
+4. Start the development server:
 ```bash
 npm run dev
 ```
 
-Your application will be available at `http://localhost:5173`.
+## Environment Variables
 
-## Building for Production
+| Variable | Description | Required |
+|----------|-------------|----------|
+| CLOUDFLARE_API_TOKEN | Your Cloudflare API token with Images permissions | Yes |
+| CLOUDFLARE_ACCOUNT_ID | Your Cloudflare account ID | Yes |
+| CLOUDFLARE_ACCOUNT_HASH | Your Cloudflare account hash for image URLs | Yes |
 
-Create a production build:
+### Getting Your Credentials
 
-```bash
-npm run build
+1. **API Token**: Create a new API token at https://dash.cloudflare.com/profile/api-tokens with the following permissions:
+   - Account > Cloudflare Images: Read & Edit
+   - Account > Account Analytics: Read
+
+2. **Account ID**: Found on your Cloudflare Images dashboard screen: `https://dash.cloudflare.com/<ACCOUNT_ID>/images`
+
+3. **Account Hash**: Found on your Cloudflare Images dashboard screen
+
+## Usage
+
+### Viewing Images
+- Navigate to the gallery page to view all your images. Currently limited to the first 100.
+- Click on an image to view its details
+- View variant configurations and URLs
+
+### Uploading Images
+1. Click the "Upload Image" button
+2. Select an image file (supported formats: JPEG, PNG, GIF, WebP)
+3. Click "Upload"
+4. After upload, the gallery will refresh
+
+### Deleting Images
+1. Navigate to the image details page
+2. Click the "Delete Image" button
+3. Confirm the deletion
+4. After upload, the gallery will refresh
+
+## Development
+This is tool is an experiment in using Cursor AI to lead the development of a project. The code and project structure are almost fully designed by Cursor AI. My input so far has been in selecting React Router as the framework, project design, testing and assisting the debugging of challenging bugs.
+
+### Project Structure
+```
+app/
+├── components/        # Reusable React components
+├── lib/              # Utility functions and services
+├── routes/           # Remix routes and pages
+├── styles/           # CSS styles
+└── types/           # TypeScript type definitions
 ```
 
-## Deployment
+### Available Scripts
 
-### Docker Deployment
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run start` - Start production server
+- `npm run typecheck` - Run TypeScript checks
+- `npm run lint` - Run ESLint
+- `npm test` - Run tests
 
-To build and run using Docker:
+## Contributing
 
-```bash
-docker build -t my-app .
+Contributions are welcome! Please read our [Contributing Guide](CONTRIBUTING.md) for details on our code of conduct and the process for submitting pull requests.
 
-# Run the container
-docker run -p 3000:3000 my-app
-```
+## License
 
-The containerized application can be deployed to any platform that supports Docker, including:
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-- AWS ECS
-- Google Cloud Run
-- Azure Container Apps
-- Digital Ocean App Platform
-- Fly.io
-- Railway
+## Acknowledgments
 
-### DIY Deployment
-
-If you're familiar with deploying Node applications, the built-in app server is production-ready.
-
-Make sure to deploy the output of `npm run build`
-
-```
-├── package.json
-├── package-lock.json (or pnpm-lock.yaml, or bun.lockb)
-├── build/
-│   ├── client/    # Static assets
-│   └── server/    # Server-side code
-```
-
-## Styling
-
-This template comes with [Tailwind CSS](https://tailwindcss.com/) already configured for a simple default starting experience. You can use whatever CSS framework you prefer.
-
----
-
-Built with ❤️ using React Router.
+- Built with [React Router](https://reactrouter.com)
+- Uses [Cloudflare Images API](https://developers.cloudflare.com/images/)
+- Styled with [Tailwind CSS](https://tailwindcss.com/)
